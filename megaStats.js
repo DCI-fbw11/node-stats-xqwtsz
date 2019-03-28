@@ -14,7 +14,6 @@ const megaResult = async path => {
       projectTrack.projectCount++;
       projectTrack.projectNames.push(path);
       megaStats(path);
-      // console.log(megaSize);
     } else {
       const otherItems = fs.readdirSync(path, { withFileTypes: true });
 
