@@ -1,0 +1,19 @@
+{
+  "name": "stats-xqwtsz",
+  "version": "1.0.0",
+  "description": "Curious how much disk space your node_modules occupy? Node-stats to the rescue!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DCI-fbw11/node-stats-xqwtsz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DCI-fbw11/node-stats-xqwtsz/issues"
+  },
+  "homepage": "https://github.com/DCI-fbw11/node-stats-xqwtsz#readme"
+}
