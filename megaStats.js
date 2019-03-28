@@ -7,15 +7,9 @@ const fs = require("fs");
 const megaResult = async path => {
   let megaSize = [];
   let projectTrack = { projectCount: 0, projectNames: [] };
+
   const megaCheck = path => {
     const items = fs.readdirSync(path);
-    const detailedItems = fs.readdirSync(path, { withFileTypes: true });
-    let areFolders = false;
-    for (let thing of detailedItems) {
-      if (thing.isDirectory()) {
-        areFolders = true;
-      }
-    }
 
     if (items.includes("node_modules")) {
       projectTrack.projectCount++;
@@ -50,4 +44,5 @@ const megaResult = async path => {
 
   return { megaSize, projectTrack };
 };
+
 module.exports = megaResult;

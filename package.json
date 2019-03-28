@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/DCI-fbw11/node-stats-xqwtsz/issues"
   },
-  "homepage": "https://github.com/DCI-fbw11/node-stats-xqwtsz#readme"
+  "homepage": "https://github.com/DCI-fbw11/node-stats-xqwtsz#readme",
+  "devDependencies": {
+    "jest": "^24.5.0"
+  }
 }
