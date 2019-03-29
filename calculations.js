@@ -37,11 +37,10 @@ const calcSub = data => {
     let pSize = project.projectSize.toFixed(2);
     let nSize = project.nodeModulesSize.toFixed(2);
     let path = process.cwd();
-    let oneUp = PATH.join(path, "..");
     console.log(
       `The size of your [${
         project.project.length === path.length
-          ? project.project.slice(oneUp.length + 1, project.project.length)
+          ? PATH.basename(path)
           : project.project.slice(path.length + 1, project.project.length)
       }] project is ~${pSize > 1000 ? (pSize / 1000).toFixed(2) : pSize} ${
         pSize > 1000 ? "GB" : "MB"
