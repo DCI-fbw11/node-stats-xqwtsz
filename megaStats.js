@@ -17,7 +17,6 @@ const megaResult = async path => {
       megaStats(path);
     } else {
       const otherItems = fs.readdirSync(path, { withFileTypes: true });
-
       otherItems.forEach(item => {
         if (item.isDirectory() && item.name[0] !== ".") {
           megaCheck(path + "/" + item.name);

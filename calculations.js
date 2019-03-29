@@ -1,3 +1,5 @@
+const PATH = require("path");
+
 const calcTotal = (data, args) => {
   let totalSize = (
     data.megaSize.reduce((acc, cur) => acc + cur.size, 0) / 1000000
@@ -5,7 +7,7 @@ const calcTotal = (data, args) => {
   if (args !== "--ls") {
     console.log(
       `You have ${data.projectTrack.projectCount} project${
-        data.projectTrack.projectCount > 1 ? "s" : null
+        data.projectTrack.projectCount > 1 ? "s" : ""
       } with a total size of ~${
         totalSize > 1000 ? (totalSize / 1000).toFixed(2) : totalSize
       } ${totalSize > 1000 ? "GB" : "MB"}`
@@ -35,11 +37,13 @@ const calcSub = data => {
     let pSize = project.projectSize.toFixed(2);
     let nSize = project.nodeModulesSize.toFixed(2);
     let path = process.cwd();
+    let oneUp = PATH.join(path, "..");
     console.log(
-      `The size of your [${project.project.slice(
-        path.length + 1,
-        project.project.length
-      )}] project is ~${pSize > 1000 ? (pSize / 1000).toFixed(2) : pSize} ${
+      `The size of your [${
+        project.project.length === path.length
+          ? project.project.slice(oneUp.length + 1, project.project.length)
+          : project.project.slice(path.length + 1, project.project.length)
+      }] project is ~${pSize > 1000 ? (pSize / 1000).toFixed(2) : pSize} ${
         pSize > 1000 ? "GB" : "MB"
       } containing a [node_modules] folder with the size of ~${
         nSize > 1000 ? (nSize / 1000).toFixed(2) : nSize
