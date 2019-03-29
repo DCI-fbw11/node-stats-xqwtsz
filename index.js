@@ -17,13 +17,18 @@ const main = () => {
 };
 
 const mainCall = (path, args) => {
-  megaResult(path).then(data => {
-    if (data.megaSize.length === 0 && data.projectTrack.projectCount === 0) {
-      console.log("There are no projects in this directory.");
-    } else {
-      calcTotal(data, args);
-    }
-  });
+  const data = megaResult(path);
+
+  calcTotal(data, args);
+
+  // NOW USING SYNC
+  // megaResult(path).then(data => {
+  //   if (data.megaSize.length === 0 && data.projectTrack.projectCount === 0) {
+  //     console.log("There are no projects in this directory.");
+  //   } else {
+  //     calcTotal(data, args);
+  //   }
+  // });
 };
 
 module.exports = main;
